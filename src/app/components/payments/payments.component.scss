@@ -1,0 +1,24 @@
+.payments {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-top: 25px;
+  .code {
+    display: flex;
+    justify-content: center;
+    width: 512px;
+    align-items: center;
+    padding: 30px;
+    background: #4eb1a0;
+  }
+  form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 572px;
+    padding-top: 10px;
+  }
+  .mat-table {
+    width: 572px;
+  }
+}

@@ -1,0 +1,38 @@
+<div class="payments">
+  <div class="code">
+    Your code: {{code}}
+  </div>
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Payment</mat-label>
+      <input matInput formControlName="payment" type="text">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Amount</mat-label>
+      <input matInput formControlName="amount" type="number" min="1">
+    </mat-form-field>
+    <button mat-button (click)="add()">Add</button>
+    <a routerLink="/generator" mat-button>Generator</a>
+  </form>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="payment">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.payment}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="code">
+      <mat-header-cell *matHeaderCellDef> Code </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.code}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="amount">
+      <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.amount}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="grid">
+      <mat-header-cell *matHeaderCellDef> Grid </mat-header-cell>
+      <mat-cell *matCellDef="let element"> 100 </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+</div>

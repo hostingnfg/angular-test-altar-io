@@ -1,0 +1,32 @@
+.generator {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-top: 25px;
+  form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 572px;
+  }
+  .line {
+    display: flex;
+    flex-direction: row;
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 50px;
+      border: 1px solid silver;
+    }
+  }
+  .code {
+      display: flex;
+      justify-content: center;
+      width: 512px;
+      align-items: center;
+      padding: 30px;
+      background: #4eb1a0;
+  }
+}

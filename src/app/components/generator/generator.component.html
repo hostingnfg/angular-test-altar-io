@@ -1,0 +1,28 @@
+<div class="generator">
+  <div class="actions">
+    <form [formGroup]="form">
+      <mat-form-field>
+        <input matInput formControlName="char" maxlength="1" (change)="charChanged()" type="text">
+      </mat-form-field>
+      <div *ngIf="clock">
+        {{clock.hours}}:{{clock.minutes}}:{{clock.seconds}}
+      </div>
+      <button mat-button (click)="generate()">Generate 2D Grid</button>
+      <a routerLink="/payments" mat-button>Payments</a>
+    </form>
+  </div>
+  <div class="line">
+    <div *ngFor="let x of headerTable; let i = index" [attr.data-index]="i" class="item">
+      {{i > 0 ? i-1 : ''}}
+    </div>
+  </div>
+  <div *ngFor="let line of grid | keyvalue; let i = index" [attr.data-index]="i" class="line">
+    <div class="item">{{i}}</div>
+    <div *ngFor="let item of line.value | keyvalue; let j = index" [attr.data-index]="j" class="item">
+        {{item.value}}
+    </div>
+  </div>
+  <div class="code">
+    Your code: {{code}}
+  </div>
+</div>
